@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    height: 100vh;
+    text-align: center;
+}
+.gesture{
+	background-color: rgb(250, 202, 239);
+	width: 50%;
+}
+
+.gesture-detection{
+	background-color: rgb(251, 255, 197);
+	width: 50%;
+}
+
+.gesture-title{
+    font-size: 6vh;
+	margin-top: 2vh;
+}
+
+.gesture-detection-title{
+    font-size: 6vh;
+    margin-top: 2vh;
+    margin-bottom: 0vh;
+}
+
+.gesture-desciption-text{
+    font-size: 5vh;
+	margin-top: 30%;
+}
+
+@media screen and (max-width: 540px){
+	.container{
+		flex-direction: column;
+	}
+	.gesture{
+		width: 100%;
+		height: 50%;
+	}
+	.gesture-detection{
+		height: 50%;
+		width: 100%;
+	}
+    .gesture-title{
+        margin-top: 10vh;
+    }
+    
+}
