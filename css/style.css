@@ -9,13 +9,17 @@ body{
     text-align: center;
 }
 .gesture{
-	background-color: rgb(250, 202, 239);
+	background-color: rgb(207, 207, 207);
 	width: 50%;
+	border-radius: 25px;
+	padding: 20px;
 }
 
 .gesture-detection{
-	background-color: rgb(251, 255, 197);
+	background-color: rgb(120, 120, 120);
 	width: 50%;
+	border-radius: 25px;
+	padding: 20px;
 }
 
 .gesture-title{
@@ -49,5 +53,9 @@ body{
     .gesture-title{
         margin-top: 10vh;
     }
+
+	images{
+		size: 30%;
+	}
     
 }

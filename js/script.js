@@ -4,7 +4,7 @@ const gestureOutput = document.getElementById("desciption");
 
 
 //Click and Double click
-let timer;
+let Timer;
 let isSwiped = false;
 
     touchArea.onclick = event => {
@@ -12,13 +12,13 @@ let isSwiped = false;
     if (event.detail === 1) {
       if(!hasMoved){
         if (event.detail === 1) {
-          timer = setTimeout(() => {
+          Timer = setTimeout(() => {
             gestureOutput.innerHTML = "<img src='images/tapping.png'/>";
           }, 200)
     }
       }
     } else if (event.detail === 2) {
-      clearTimeout(timer)
+      clearTimeout(Timer)
       gestureOutput.innerHTML = "<img src='images/double tapping.png'/>";
       isClick = false;
     }
@@ -27,18 +27,18 @@ let isSwiped = false;
 
  //Holding
 
- var onlongtouch; 
+ var longtouch; 
  var time;
- var touchduration = 500; //length of time we want the user to touch before we do something
+ var longtouchduration = 500; //length of time we want the user to touch before we do something
 
- function touchstart(e) {
+ function starttouch(e) {
      e.preventDefault();
      if (!time) {
-         time = setTimeout(onlongtouch, touchduration);
+         time = setTimeout(longtouch, longtouchduration);
      }
  }
  
- function touchend() {
+ function endtouch() {
      //stops short touches from firing the event
      if (time) {
          clearTimeout(time);
@@ -46,13 +46,13 @@ let isSwiped = false;
      }
  }
  
- onlongtouch = function() { 
+ longtouch = function() { 
      time = null;
      gestureOutput.innerHTML = "<img src='images/holding.png'/>";
  };
  
- touchArea.addEventListener("mousedown", touchstart, false);
- touchArea.addEventListener("mouseup", touchend, false);
+ touchArea.addEventListener("mousedown", starttouch, false);
+ touchArea.addEventListener("mouseup", endtouch, false);
  
 
 //swipe touch and mouse
@@ -76,9 +76,9 @@ let deviceType = "";
      up: "mouseup",
    },
    touch: {
-     down: "touchstart",
+     down: "starttouch",
      move: "touchmove",
-     up: "touchend",
+     up: "endtouch",
    },
  };
   
